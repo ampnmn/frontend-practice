@@ -1,0 +1,43 @@
+body {
+    width: 800px;
+    margin: 0 auto;
+    min-height: 100vh;
+    display: grid;
+    /* IEでは使えません!!*/
+    grid-template:
+        "... ...... ...... ...... ...... ...... ..."
+        "... header header header header header ..." 150px
+        "... ...... ...... ...... ...... ...... ..." 10px
+        "... left   ...... center ...... right  ..." 1fr
+        "... ...... ...... ...... ...... ...... ..." 20px
+        "... footer footer footer footer footer ..." 300px
+        "... ...... ...... ...... ...... ...... ..."
+        / auto 120px 10px 1fr 10px 130px auto;
+    /*gap: 10px;*/
+}
+
+header {
+    font-size: xx-large;
+    background-color: aqua;
+    grid-area: header; /* 名前をつけている */
+}
+
+nav {
+    background-color: beige;
+    grid-area: left;
+}
+
+main {
+    margin: auto;
+    grid-area: center;
+}
+
+aside {
+    background-color: burlywood;
+    grid-area: right;
+}
+
+footer {
+    background-color: aquamarine;
+    grid-area: footer;
+}
