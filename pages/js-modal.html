@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>grid-layout</title>
+    <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+    <link rel="stylesheet" href="../styles/js-modal.css">
+</head>
+<body>
+<header>めっちゃオシャレさん</header>
+<main>
+    <div class="popup" id="js-popup">
+        <div class="popup-inner">
+            <div class="close-btn" id="js-close-btn"><i class="fas fa-times"></i></div>
+            <img src="../images/fashion.jpg" alt="世界一オシャレな赤ちゃんの画像がポップアップする">
+        </div>
+        <div class="black-background" id="js-black-bg"></div>
+    </div>
+</main>
+<script>
+    window.onload = function () {
+        const popup = document.getElementById('js-popup');
+        if (!popup) return;
+        popup.classList.add('is-show');　 // 表示
+
+        const blackBg = document.getElementById('js-black-bg');
+        const closeBtn = document.getElementById('js-close-btn');
+
+        addPopUpCloseEvent(blackBg);
+        addPopUpCloseEvent(closeBtn);
+
+        function addPopUpCloseEvent(elem) {
+            if (!elem) return;
+            elem.addEventListener('click', function () {
+                popup.classList.remove('is-show');
+            })
+        }
+    }
+</script>
+</body>
+</html>
